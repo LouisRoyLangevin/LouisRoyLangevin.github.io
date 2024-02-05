@@ -4,6 +4,88 @@
     margin: auto;
 }
 
+#options-container{
+    margin: auto;
+}
+
 body{
     background-color: rgb(240,240,240);
+    font-family: 'Roboto';
+    color: rgb(230,230,230);
+}
+
+#header{
+    width: 100%;
+    height: 400px;
+    background-image: url("images/image-me.jpeg");
+    background-position-y: 30%;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+#background-cover{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0,0,0,0.76);
+}
+
+#name{
+    font-size: 100px;
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+
+#welcome{
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    top: -5px;
+}
+
+#options{
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    position: absolute;
+    top: 400px;
+    left: 0;
+}
+
+.pdf{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+#go-back{
+    color: rgb(70,70,70);
+    position: absolute;
+    top: 3px;
+    left: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#go-back-buffer{
+    height: 22px;
+    width: 15px;
+    position: absolute;
+    top: 24px;
+    left: 55px;
+    cursor: pointer;
+}
+#go-back-icon{
+    height: 22px;
+    float: left;
+    position: absolute;
+    top: 24px;
+    left: 25px;
+    cursor: pointer;
 }

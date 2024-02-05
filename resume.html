@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My resume</title>
-    <meta charser="utf-8">
+    <title>Burning number report</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>I will very soon upload the content of my resume</h1>
+<body style="background-color: rgb(210,210,210);">
+    <a href="index.html">
+        <img src="images/go-back-icon.png" alt="" id="go-back-icon" onmouseover="gobackhover()" onmouseout="gobacknothover()">
+        <div id="go-back-buffer" onmouseover="gobackhover()" onmouseout="gobacknothover()" href="index.html"></div>
+        <p id="go-back" onmouseover="gobackhover()" onmouseout="gobacknothover()" href="index.html">Go back</p>
+    </a>
+    <iframe src="pdf/resume.pdf" alt="pdf file of my final report" class="pdf"></iframe>
 </body>
+<script src="script.js"></script>
 </html>

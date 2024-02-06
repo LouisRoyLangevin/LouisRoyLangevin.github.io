@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Louis-Roy Langevin</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="options">
+            <div id="options-container">
+                <div id="about-me" class="option" style="border-color: white; border-bottom-color: rgb(160,160,255); color: black; cursor: default;"><p class="option-text">Home</p></div>
+                <a href="resume.pdf"><div id="resume" class="option"><p class="option-text">Resume</p></div></a>
+                <a href="portfolio.html"><div id="portfolio" class="option"><p class="option-text">Portfolio</p></div></a>
+                <a href="research.html"><div id="research" class="option"><p class="option-text">Research</p></div></a>
+            </div>
+        </div>
+        <div id="header">
+            <div id="background-cover">
+                <h1 id="name">Louis-Roy Langevin</h1>
+                <h2 id="welcome">Welcome to my website</h2>
+            </div>
+        </div>
+        <div id="contact-banner-left"></div>
+        <div id="contacts-container">
+            <div id="contacts">
+                <div id="mail" class="contact">
+                    <img src="images/mail-icon.png" alt="" class="icon">
+                    <p class="contact-text">louisroylangevin3@gmail.com</p>
+                </div>
+                <div id="linked-in" class="contact">
+                    <a href="https://www.linkedin.com/in/louis-roy-langevin/" class="contact-link" onmouseover="linkedinhover()" onmouseout="linkedinnothover()">
+                        <img src="images/linked-in-icon.png" alt="" class="icon">
+                        <p class="contact-text" id="linked-in-text">https://www.linkedin.com/in/louis-roy-langevin/</p>
+                    </a>
+                </div>
+                <div id="github" class="contact">
+                    <a href="https://github.com/LouisRoyLangevin" class="contact-link" onmouseover="githubhover()" onmouseout="githubnothover()">
+                        <img src="images/github-icon.png" alt="" class="icon">
+                        <div><p class="contact-text" id="github-text">https://github.com/LouisRoyLangevin</p></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contact-banner-right"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

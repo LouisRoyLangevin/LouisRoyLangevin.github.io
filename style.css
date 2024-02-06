@@ -6,10 +6,12 @@
 
 #options-container{
     margin: auto;
+    left: calc(50vh-300px);
+    background-color: green;
+    width: 600px;
 }
 
 body{
-    background-color: rgb(240,240,240);
     font-family: 'Roboto';
     color: rgb(230,230,230);
 }
@@ -17,12 +19,12 @@ body{
 #header{
     width: 100%;
     height: 400px;
-    background-image: url("images/image-me.jpeg");
+    background-image: url("images/background-header.jpeg");
     background-position-y: 30%;
     background-size: cover;
     position: absolute;
     left: 0;
-    top: 0
+    top: 70px;
 }
 
 #background-cover{
@@ -45,15 +47,6 @@ body{
     text-align: center;
     position: relative;
     top: -5px;
-}
-
-#options{
-    width: 100%;
-    height: 70px;
-    background-color: red;
-    position: absolute;
-    top: 400px;
-    left: 0;
 }
 
 .pdf{
@@ -88,4 +81,104 @@ body{
     top: 24px;
     left: 25px;
     cursor: pointer;
+}
+
+#options{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+}
+
+.option{
+    width: 146px;
+    height: 66px;
+    float: left;
+    position: relative;
+    transition: 0.4s;
+    border: 2px solid white;
+    text-align: center;
+    color: black;
+}.option:hover{
+    cursor: pointer;
+    border-bottom-color: rgb(100,100,230);
+    color: rgb(100,100,230);
+    
+}
+a div{
+    outline: none;
+}
+
+.option-text{
+    position: relative;
+    top: 7px;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 866px) {
+    #welcome{
+        display: none;
+    }
+}
+
+#contacts{
+    position: absolute;
+    width: 1075px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    left: 32px;
+    top: 7px;
+}
+
+.contact {
+    display: flex;
+    margin-right: 30px;
+}
+
+.icon {
+    width: 50px;
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#contacts-container{
+    color: black;
+    background-color: rgb(210,210,210);
+    height: 65px;
+    position: absolute;
+    top: 470px;
+    left: calc(50% - 560px);
+    width: 1120px;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.contact-link{
+    display: flex;
+    flex-direction: row;
+}
+
+#contact-banner-left{
+    height: 7px;
+    width: calc(50% - 560px);
+    position: absolute;
+    top: 470px;
+    left: 0;
+    background-color: rgb(210,210,210);
+}
+
+#contact-banner-right{
+    height: 7px;
+    width: calc(50% - 560px);
+    position: absolute;
+    top: 470px;
+    right: 0;
+    background-color: rgb(210,210,210);
 }

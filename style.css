@@ -2,6 +2,8 @@
     width: 90%;
     height: 50px;
     margin: auto;
+    background-color: white;
+    z-index: 5;
 }
 
 #options-container{
@@ -13,7 +15,8 @@
 
 body{
     font-family: 'Roboto';
-    color: rgb(230,230,230);
+    color: rgb(240,240,240);
+    background-color: rgb(250,230,230);
 }
 
 #header{
@@ -25,6 +28,7 @@ body{
     position: absolute;
     left: 0;
     top: 70px;
+    box-shadow: 0px 3px 7px black;
 }
 
 #background-cover{
@@ -116,30 +120,26 @@ a div{
     text-decoration: none;
 }
 
-@media screen and (max-width: 866px) {
-    #welcome{
-        display: none;
-    }
-}
-
 #contacts{
     position: absolute;
-    width: 1075px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     left: 32px;
-    top: 7px;
+    top: 12px;
 }
 
 .contact {
     display: flex;
-    margin-right: 30px;
+    margin-bottom: 20px;
 }
 
 .icon {
     width: 50px;
     margin-right: 10px;
+}
+
+#mail-icon{
+    height: 45px;
+    position: relative;
+    top: 2.5px;
 }
 
 a{
@@ -149,15 +149,16 @@ a{
 
 #contacts-container{
     color: black;
-    background-color: rgb(210,210,210);
-    height: 65px;
+    background-color: white;
+    height: 220px;
     position: absolute;
-    top: 470px;
-    left: calc(50% - 560px);
-    width: 1120px;
-    align-items: center;
-    border-bottom-left-radius: 15px;
+    top: 520px;
+    left: 0px;
+    width: 450px;
+    border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    border: 2px dashed grey;
+    border-left: none;
 }
 
 .contact-link{
@@ -165,20 +166,80 @@ a{
     flex-direction: row;
 }
 
-#contact-banner-left{
-    height: 7px;
-    width: calc(50% - 560px);
-    position: absolute;
-    top: 470px;
-    left: 0;
-    background-color: rgb(210,210,210);
+#who-i-am-container{
+    color: black;
 }
 
-#contact-banner-right{
-    height: 7px;
-    width: calc(50% - 560px);
+#courses-list{
+    color: black;
+    position: relative;
+    top: 30px;
+    left: 0px;
+}
+
+#text-container{
+    position: relative;
+    left: 500px;
+    top: 500px;
+    width: calc(100% - 555px);
+    text-align: justify;
+}
+
+#image-me{
+    width: 420px;
     position: absolute;
-    top: 470px;
-    right: 0;
-    background-color: rgb(210,210,210);
+    top: 780px;
+    left: 25px;
+    border-radius: 15px;
+}
+
+#buffer1{
+    position: absolute;
+    top: 1200px;
+    width: 1px;
+    height: 1px;
+}
+
+#buffer2{
+    position: relative;
+    top: 60px;
+    width: 1px;
+    height: 1px;
+}
+
+@media screen and (max-width: 866px) {
+    #welcome{
+        display: none;
+    }
+    #name{
+        top: 10px;
+    }
+    #contacts-container{
+        margin: auto;
+        position: relative;
+        border-left: dashed 2px grey;
+        border-radius: 15px;
+    }
+    #image-me{
+        position: relative;
+        margin-left: calc(50% - 225px);
+        left: 0;
+        top: 910px;
+        width: 450px
+    }
+    #text-container{
+        top: 150px;
+        left: 0;
+        margin: auto;
+        width: 450px;
+    }
+    #courses-list{
+        position: relative;
+        top: 460px;
+    }
+    #buffer2{
+        top: 490px;
+        width: 1px;
+        height: 1px;
+    }
 }

@@ -8,15 +8,14 @@
 
 #options-container{
     margin: auto;
-    left: calc(50vh-300px);
     background-color: green;
-    width: 600px;
+    width: 450px;
 }
 
 body{
     font-family: 'Roboto';
     color: rgb(240,240,240);
-    background-color: rgb(250,230,230);
+    background-color: rgb(250,240,240);
 }
 
 #header{
@@ -207,6 +206,33 @@ a{
     height: 1px;
 }
 
+#buffer3{
+    position: relative;
+    top: 600px;
+    width: 1px;
+    height: 1px;
+}
+
+#title-research{
+    font-size: 100px;
+    text-align: center;
+    position: relative;
+    top: 60px;
+}
+
+#research-container{
+    position: relative;
+    top: 530px;
+    margin: auto;
+    width: 80%;
+    color: black;
+    font-size: 25px;
+}
+
+.research-text{
+    font-size: 22px;
+}
+
 @media screen and (max-width: 866px) {
     #welcome{
         display: none;
@@ -241,5 +267,17 @@ a{
         top: 490px;
         width: 1px;
         height: 1px;
+    }
+}
+
+@media screen and (max-width: 1355px) {
+    #title-research {
+        top : 10px;
+    }
+}
+
+@media screen and (max-width: 781px) {
+    #title-research {
+        top : -47px;
     }
 }

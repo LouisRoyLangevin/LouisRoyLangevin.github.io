@@ -239,7 +239,7 @@ a{
     font-style: italic;
     text-decoration: underline;
 }
-#article :hover {
+#article:hover {
     color : white;
 }
 

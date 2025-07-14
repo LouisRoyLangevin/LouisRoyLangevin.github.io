@@ -233,6 +233,15 @@ a{
     font-size: 22px;
 }
 
+#article{
+    color: grey;
+    font-size : 10pt;
+    font-style: italic;
+}
+#article :hover {
+    color : white;
+}
+
 @media screen and (max-width: 866px) {
     #welcome{
         display: none;

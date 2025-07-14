@@ -235,7 +235,7 @@ a{
 
 #article{
     color: grey;
-    font-size : 10pt;
+    font-size : 20pt;
     font-style: italic;
 }
 #article :hover {

@@ -234,9 +234,10 @@ a{
 }
 
 #article{
-    color: grey;
-    font-size : 20pt;
+    color: rgb(100,100,100);
+    font-size : 17pt;
     font-style: italic;
+    text-decoration: underline;
 }
 #article :hover {
     color : white;

@@ -31,13 +31,13 @@
                     <br/><br/>
                     A uniform attachment tree is a tree (acyclic graph) that was constructed as follows :<br/>
                     0) Choose any natural number \(n\).<br/>
-                    1) Start with a single vertex v<sub>0</sub> called the root.<br/>
-                    2) Attach a new vertex v<sub>1</sub> to v<sub>0</sub> with an edge.<br/>
-                    3) Randomly choose a vertex in {v<sub>0</sub>, v<sub>1</sub>} uniformly and attach a new vertex v<sub>2</sub> to it with an edge.<br/>
-                    4) Randomly choose a vertex in {v<sub>0</sub>, v<sub>1</sub>, v<sub>2</sub>} uniformly and attach a new vertex v<sub>3</sub> to it with an edge.<br/>
-                    5) Repeat this process until there are <i>n</i> vertices in your tree. The graph you obtain is the uniform attachment tree.
+                    1) Start with a single vertex \(v_0\)called the root.<br/>
+                    2) Attach a new vertex \(v_1\) to \(v_0\) with an edge.<br/>
+                    3) Randomly choose a vertex in {\(v_1\), \(v_0\)} uniformly and attach a new vertex v<sub>2</sub> to it with an edge.<br/>
+                    4) Randomly choose a vertex in {\(v_2\), \(v_1\), \(v_0\)} uniformly and attach a new vertex \(v_2\) to it with an edge.<br/>
+                    5) Repeat this process until there are \(n\) vertices in your tree. The graph you obtain is the uniform attachment tree.
                     <br/><br/>
-                    A root finding algorithm is an algorithm that takes a uniform attachment tree <i>T = ( V , E )</i> and a positive real number <i>&epsilon;>0</i> as an input.  It then outputs a subset <i>W</i> of <i>V</i> of size independent of <i>T</i> such that the probability that the root of <i>T</i> is in <i>W</i> is at least <i>1 - &epsilon;</i>.
+                    A root finding algorithm is an algorithm that takes a uniform attachment tree \(T = ( V , E )\) and a positive real number \(\varepsilon > 0\) as an input.  It then outputs a subset \(W\) of \(V\) of size independent of \(T\) such that the probability that the root of \(T\) is in \(W\) is at least \(1 - \varepsilon\).
                     <br/><br/>
                     Note here that it may seem surprising that the size of <i>W</i> does not depend on <i>T</i>. You are not alone if you felt that way, it is a very nice result!
                     <br/><br/>

@@ -33,15 +33,15 @@
                     0) Choose any natural number \(n\).<br/>
                     1) Start with a single vertex \(v_0\)called the root.<br/>
                     2) Attach a new vertex \(v_1\) to \(v_0\) with an edge.<br/>
-                    3) Randomly choose a vertex in {\(v_1\), \(v_0\)} uniformly and attach a new vertex v<sub>2</sub> to it with an edge.<br/>
+                    3) Randomly choose a vertex in {\(v_1\), \(v_0\)} uniformly and attach a new vertex \(v_2\) to it with an edge.<br/>
                     4) Randomly choose a vertex in {\(v_2\), \(v_1\), \(v_0\)} uniformly and attach a new vertex \(v_2\) to it with an edge.<br/>
                     5) Repeat this process until there are \(n\) vertices in your tree. The graph you obtain is the uniform attachment tree.
                     <br/><br/>
                     A root finding algorithm is an algorithm that takes a uniform attachment tree \(T = ( V , E )\) and a positive real number \(\varepsilon > 0\) as an input.  It then outputs a subset \(W\) of \(V\) of size independent of \(T\) such that the probability that the root of \(T\) is in \(W\) is at least \(1 - \varepsilon\).
                     <br/><br/>
-                    Note here that it may seem surprising that the size of <i>W</i> does not depend on <i>T</i>. You are not alone if you felt that way, it is a very nice result!
+                    Note here that it may seem surprising that the size of \(W\) does not depend on \(T\). You are not alone if you felt that way, it is a very nice result!
                     <br/><br/>
-                    For such an algorithm to be considered efficient, we want the size of <i>W</i> to be as small as possible as a function of <i>&epsilon;</i>.  The way we characterize the efficiency of algorithms is by comparing the asymptotic behaviours of the size of <i>W</i> as <i>&epsilon;</i> approaches 0 for different algorithms.
+                    For such an algorithm to be considered efficient, we want the size of \(W\) to be as small as possible as a function of \(\varepsilon > 0\).  The way we characterize the efficiency of algorithms is by comparing the asymptotic behaviours of the size of \(W\) as \(\varepsilon\) approaches \(0\) for different algorithms.
                     <br/><br/>
                     The main topic I worked on during this project is trying to upper bound and lower bound the optimal asymptotic behaviour that any root finding algorithm can reach.
                     <br/><br/>
@@ -54,14 +54,14 @@
                     <br/><br/>
                     The main goal of this research is to improve the advancements that have been made regarding the Burning Number conjecture.
                     <br/><br/>
-                    Given any finite connected graph <i>G = ( V , E )</i>, we can define a metric space <i>( V , d )</i> where <i>d(u,v)</i> is equal to the length of the shortest path between <i>u</i> and <i>v</i>.
+                    Given any finite connected graph \(G = ( V , E )\), we can define a metric space \(( V , d )\) where \(d(u,v)\) is equal to the length of the shortest path between \(u\) and \(v\).
                     <br/><br/>
-                    For a vertex <i>v</i> and a natural number <i>r</i>, a ball of radius <i>r</i> around <i>v</i> is defined as <i>B<sub>r</sub>(v) = {u &#8712; V : d(u,v) &#8804; r}</i>, i.e. all the vertices that are at distance from <i>v</i> less than or equal to <i>r</i>.
+                    For a vertex \(v\) and a natural number \(r\), a ball of radius \(r\) around \(v\) is defined as \(B_r(v) = \{u \in V : d(u,v) \le r\}\), i.e. all the vertices that are at distance from \(v\) less than or equal to \(r\).
                     <br/><br/>
-                    The burning number of a graph <i>G = ( V , E )</i>, denoted <i>B(G)</i>, is the minimal natural number <i>k</i> such that there exist <i>v<sub>0</sub>,v<sub>1</sub>,...,v<sub>k-1</sub>&#8712V</i> with <i>V=B<sub>0</sub>(v<sub>0</sub>)&#8899;B<sub>1</sub>(v<sub>1</sub>)&#8899;...&#8899;B<sub>k-1</sub>(v<sub>k-1</sub>)</i>.<br/>
-                    Clearly such a number <i>k</i> must exist since we can enumerate <i>V</i> as <i>V={v<sub>0</sub>,...,v<sub>|V|-1</sub>}</i> to get that <i>V=B<sub>0</sub>(v<sub>0</sub>)&#8899;...&#8899;B<sub>|V|-1</sub>(v<sub>|V|-1</sub>)</i>.
+                    The burning number of a graph \(G = ( V , E )\), denoted \(B(G)\), is the minimal natural number \(k\) such that there exist \(v_0,v_1,\ldots,v_{k-1} \in V\) with \(V = \bigcup_{i=0}^{k-1} B_i(v_i)).<br/>
+                    Clearly such a number \(k\) must exist since we can enumerate \(V\) as \(V = \{v_0,\ldots,v_{|V|-1}\}) to get that V = \bigcup_{i=0}^{|V|-1} B_i(v_i)</i>.
                     <br/><br/>
-                    The Burning Number conjecture states that for any graph <i>G = ( V , E )</i>, <i>B(G) &#8804; &#8730;|V|</i>.
+                    The Burning Number conjecture states that for any graph \(G = ( V , E )\), \(B(G) \le \sqrt{|V|}\).
                     <br/><br/>
                     This conjecture has not been proven nor disproven yet.  Our goal during this research was to contribute to the advancement of the knowledge that we have regarding this conjecture.
                     <br/><br/>

@@ -240,7 +240,7 @@ a{
     text-decoration: underline;
 }
 #article:hover {
-    color : white;
+    color : rgb(200,200,200);
 }
 
 @media screen and (max-width: 866px) {

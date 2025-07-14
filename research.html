@@ -24,8 +24,27 @@
         </div>
         <div id="research-container">
             <div class="research-containers">
+                <h3>Popular matchings (2025)</h3>
+                <p class="research-text">
+                    This is a project ran by a subset of my research lab during my Master's degree under Prof. Adrian Vetta.
+                    <br/><br/>
+                    The main goal of this research is to find the dimension of the popular matching problem.
+                    <br/><br/>
+                    We are given a graph \(G = (V,E)\) where each agent \(v \in V\) has a weight \(w(v) \ge 0\) and preferences \(\preceq_v\) over its neighbors \(\Gamma(v)\). It is assumed that an agent strictly prefers being matched with anybody than being unmatched.
+                    <br/><br/>
+                    A set \(M \subseteq E\) is called a matching if no two edges of \(M\) are adjacent to a common vertex. Given two matchings \(M,M'\), we write \(M \succ_v M'\) if \(v\) preferes its neighbor in \(M\) over its neighbor in \(M'\) or if \(v\) is matched in \(M\) but not in \(M'\). We then denote \(\phi(M,M') = \sum_{v : M \succ_v M'} w(v)\).
+                    <br/><br/>
+                    A matching \(M\) is called popular if \(\phi(M,M') \ge \phi(M',M)\) for any matching \(M'\). Unfortunately, such a popular matching does not always exist. Consider for example a complete graph with vertices \(\{0,1,2\}\) where agent \(i\)'s top choice is \(i+1 \pmod 3\) and \(w(i) = 1\). If \(M\) was a popular matching, we may assume it is non-empty and contains an edge from \(0\) to \(1\) by symmetry, and that is the only edge \(M\) can contain. Then, the matching \(M'\) containing an edge from \(1\) to \(2\) violates the condition for being a popular matching.
+                    <br/><br/>
+                    For this reason, we generalize the notion of popular matchings. Given a set of matchings \(\mathcal{M} = \{M_1,\ldots,M_k\}\) and a matching \(M\), we write \(\mathcal{M} \succ_v M\) if agent \(v\) prefers its best match in \(\mathcal{M}\) over its match in \(M\). Then, we call \(\mathcal{M}\) a popular winning set if \(\phi(\mathcal{M},M') \ge \phi(M',\mathcal{M})\) for any matching \(M'\).
+                    <br/><br/>
+                    The popular dimension of an instance of this problem is the minimum interger \(k\) such that a popular winning set \(\mathcal{M} = \{M_1,\ldots,M_k\}\) exists. Given some sets of instances of this problem, we are trying to find the maximum possible popular dimension among those sets.
+                </p>
+            </div>
+            <div class="research-containers">
                 <h3>Attachement Trees (2024) <a href="https://arxiv.org/abs/2411.18614" id="article">The article</a></h3>
-                <p class="research-text">This is a full-time research project financed by the ISM grant (I received an offer for the NSERC grant, but I had to decline it for administrative reasons) and supervised by Prof. Louigi Addario-Berry from McGill University.
+                <p class="research-text">
+                    This is a full-time research project financed by the ISM grant (I received an offer for the NSERC grant, but I had to decline it for administrative reasons) and supervised by Prof. Louigi Addario-Berry from McGill University.
                     <br/><br/>
                     The main goal of this research is to study the efficiency of algorithms that find the root of uniform attachment trees with high probability.
                     <br/><br/>
@@ -49,7 +68,8 @@
             </div>
             <div class="research-containers">
                 <h3>The Burning Number (2023)</h3>
-                <p class="research-text">This is a full-time research project financed by the NSERC grant and supervised by Prof. Sergey Norin from McGill University.
+                <p class="research-text">
+                    This is a full-time research project financed by the NSERC grant and supervised by Prof. Sergey Norin from McGill University.
                     <br/><br/>
                     The main goal of this research is to improve the advancements that have been made regarding the Burning Number conjecture.
                     <br/><br/>
@@ -70,7 +90,8 @@
             </div>
             <div class="research-containers">
                 <h3>Subelliptic Operators (2022)</h3>
-                <p class="research-text">This is a full-time research project financed by the NSERC grant and supervised by Prof. Sergey Norin from McGill University.
+                <p class="research-text">
+                    This is a full-time research project financed by the NSERC grant and supervised by Prof. Sergey Norin from McGill University.
                     <br/><br/>
                     The main goal of this research is to find eigenfunctions of the Grushin Operator : \(\frac{\partial^2}{\partial x^2} + x^2\frac{\partial^2}{\partial y^2}\).
                     <br/><br/>

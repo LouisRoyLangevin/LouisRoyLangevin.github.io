@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+
+# React build output
+build/
+
+# Cache folders
+.cache/

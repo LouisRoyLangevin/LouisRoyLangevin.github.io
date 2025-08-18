@@ -2,11 +2,14 @@
   "name": "react.dev",
   "version": "0.0.0",
   "main": "/src/index.js",
+  "homepage": "https://LouisRoyLangevin.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "framer-motion": "^12.23.9",

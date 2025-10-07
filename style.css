@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background : url("images/background-header.jpg") center/cover no-repeat;
+    background : url("Images/background-header.jpg") center/cover no-repeat;
     height: 700px;
     width: 100%;
 }

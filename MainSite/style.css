@@ -1,320 +1,211 @@
-#options{
-    width: 90%;
-    height: 50px;
-    margin: auto;
-    background-color: white;
-    z-index: 5;
+body {
+    margin: 0;
+    font-family: 'Prompt';
+    color : rgb(230,150,150);
 }
 
-#options-container{
-    margin: auto;
-    background-color: green;
-    width: 450px;
+.gradient-text {
+    color: rgb(230,150,150);
 }
 
-body{
-    font-family: 'Roboto';
-    color: rgb(240,240,240);
-    background-color: rgb(250,240,240);
+.gradient-text-light {
+    color:rgb(255,220,220);
+    text-decoration: none;
+}
+.gradient-text-light:hover {
+    color: white;
 }
 
-#header{
+header {
+    background : url("images/background-header.jpg") center/cover no-repeat;
+    height: 700px;
     width: 100%;
-    height: 300px;
-    background-image: url("images/background-header.jpg");
-    background-position-y: 30%;
-    background-size: cover;
+}
+
+#black-cover {
+    width: 100%;
+    height : 100%;
+    background-color: rgba(0,0,0,0.85);
+}
+
+#header-content {
+    position: relative;
+    top: 80px;
+    width: 70vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ma-face {
+    width: 320px;
+    height: 440px;
+}
+
+#triangle1 {
+    width: 0px;
+    height: 0px;
+    border-left : 90px solid transparent;
+    border-right : 90px solid transparent;
+    border-top : 165px solid rgb(230,150,150);
+
+}
+
+#triangle2 {
+    width: 0px;
+    height: 0px;
+    border-left : 90px solid transparent;
+    border-right : 90px solid transparent;
+    border-bottom : 165px solid rgb(230,150,150);
     position: absolute;
-    left: 0;
+    top: 275px;
+    left: 140px;
+}
+
+#image-velo {
+    height: 300px;
+    border-radius: 150px;
+    position: absolute;
     top: 70px;
-    box-shadow: 0px 3px 7px black;
+    left: 10px;
+    box-shadow: black 0px 0px 12px;
 }
 
-#background-cover{
-    width: 100%;
-    height: 300px;
-    position: absolute;
-    top: 0px;
-    background-color: rgba(0,0,0,0.76);
+#my-name {
+    font-family: 'Prompt';
+    font-size: 40pt;
+    position: relative;
+    top: -20px;
+    text-shadow: 0px 0px 2px rgb(230,150,150);
+    color: white;
+    margin: 0;
+    color: rgb(230,150,150);
 }
 
-#name{
-    font-size: 100px;
-    text-align: center;
+#math-cs-student {
+    position: relative;
+    top : -10px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+#options {
+    text-align: right;
+}
+
+.option {
+    font-size: 20pt;
+}
+
+a.gradient-text:hover {
+    color: rgb(240,190,190);
+}
+
+#baniere-container {
+    margin: auto;
+    width: 93%;
     position: relative;
     top: -10px;
 }
 
-#welcome{
-    font-size: 40px;
-    text-align: center;
-    position: relative;
-    top: -40px;
-}
-
-.pdf{
-    position: fixed;
-    top: 70px;
-    left: 0;
+#baniere {
     width: 100%;
-    height: calc(100% - 70px);
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(230,150,150);
+    box-shadow: grey 0px 0px 6px;
 }
-
-#go-back{
-    color: rgb(70,70,70);
+#baniere-copie {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(230,150,150);
     position: absolute;
-    top: 3px;
-    left: 70px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-#go-back-buffer{
-    height: 22px;
-    width: 15px;
-    position: absolute;
-    top: 24px;
-    left: 55px;
-    cursor: pointer;
-}
-#go-back-icon{
-    height: 22px;
-    float: left;
-    position: absolute;
-    top: 24px;
-    left: 25px;
-    cursor: pointer;
-}
-
-#options{
-    position: fixed;
     top: 0;
-    left: 0;
+}
+
+#baniere-title {
     height: 70px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(230,150,150);
+    color: white;
+    margin: auto;
+    text-align: center;
+    box-shadow: grey 0px 0px 6px;
+    overflow: hidden;
+    font-size: 20pt;
+    width: fit-content
+}
+
+#baniere-title-text {
+    margin-top: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-shadow: white 0 0 1px;
+}
+
+#content-container {
     width: 100%;
 }
 
-.option{
-    width: 146px;
-    height: 66px;
-    float: left;
-    position: relative;
-    transition: 0.4s;
-    border: 2px solid white;
-    text-align: center;
-    color: black;
-}.option:hover{
-    cursor: pointer;
-    border-bottom-color: rgb(100,100,230);
-    color: rgb(100,100,230);
-    
-}
-a div{
-    outline: none;
-}
-
-.option-text{
-    position: relative;
-    top: 7px;
-    text-decoration: none;
-}
-
-#contacts{
-    position: absolute;
-    left: 32px;
-    top: 12px;
-}
-
-.contact {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.icon {
-    width: 50px;
-    margin-right: 10px;
-}
-
-#mail-icon{
-    height: 45px;
-    position: relative;
-    top: 2.5px;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-#contacts-container{
-    color: black;
-    background-color: white;
-    height: 220px;
-    position: absolute;
-    top: 420px;
-    left: 0px;
-    width: 450px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border: 2px dashed grey;
-    border-left: none;
-}
-
-.contact-link{
-    display: flex;
-    flex-direction: row;
-}
-
-#who-i-am-container{
-    color: black;
-}
-
-#my-papers{
-    color: black;
-}
-
-#courses-list{
-    color: black;
-    position: relative;
-    top: 30px;
-    left: 0px;
-}
-
-#text-container{
-    position: relative;
-    left: 500px;
-    top: 400px;
-    width: calc(100% - 555px);
+#content {
+    margin: auto;
+    width: 90%;
+    font-size: 20pt;
     text-align: justify;
 }
 
-#image-me{
-    width: 420px;
-    position: absolute;
-    top: 780px;
-    left: 25px;
-    border-radius: 15px;
+.content-section {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
 }
 
-#buffer1{
-    position: absolute;
-    top: 1200px;
-    width: 1px;
-    height: 1px;
+.content-section-title {
+    padding-bottom: 3px;
+    border-bottom: solid grey 1px;
 }
 
-#buffer2{
-    position: relative;
-    top: 60px;
-    width: 1px;
-    height: 1px;
+.content-text {
+    font-size: 16pt;
+    color: rgb(60,60,60);
+    font-weight: 300;
+    margin-top: 10px;
 }
 
-#buffer3{
-    position: relative;
-    top: 600px;
-    width: 1px;
-    height: 1px;
+.content-section-research {
+    width: 100%;
 }
 
-.paper-title {
-    color:rgb(150,0,0);
+.publication {
+    font-size : 14pt;
+    margin-bottom: 30px;
 }
 
-.scholar {
-    color: blue;
+.publication-title {
+    margin: 0;
+    font-size: 16pt;
+    color: rgb(200,0,0);
 }
 
-.link {
-    cursor: pointer;
-    text-decoration: underline;
+.publication-title-link {
+    color: rgb(200,0,0);
+}
+.publication-title-link:hover {
+    color: rgb(255,150,150);
 }
 
-.link:hover {
-    color: rgb(170,170,170);
+.publication-authors {
+    margin: 0;
+    color: grey;
+
 }
 
-
-#title-research{
-    font-size: 100px;
-    text-align: center;
-    position: relative;
-    top: 60px;
-}
-
-#research-container{
-    position: relative;
-    top: 530px;
-    margin: auto;
-    width: 80%;
+.publication-journal {
+    margin-top: 2px;
     color: black;
-    font-size: 25px;
-}
-
-.research-text{
-    font-size: 22px;
-}
-
-#article{
-    color: rgb(120,120,120);
-    font-size : 17pt;
-    font-style: italic;
-    text-decoration: underline;
-}
-#article:hover {
-    color : rgb(200,200,200);
-}
-
-@media screen and (max-width: 866px) {
-    #welcome{
-        display: none;
-    }
-    #name{
-        top: 10px;
-    }
-    #contacts-container{
-        margin: auto;
-        position: relative;
-        border-left: dashed 2px grey;
-        border-radius: 15px;
-        margin-bottom: 70px;
-    }
-    #image-me{
-        position : auto;
-        margin-left: calc(50% - 225px);
-        left: 0;
-        top: 910px;
-        width: 450px
-    }
-    #text-container{
-        position : auto;
-        margin-top: 30px;
-        left: 0;
-        margin: auto;
-        width: 450px;
-    }
-    #courses-list{
-        position: relative;
-        top: 0px;
-    }
-    #buffer2{
-        top: 490px;
-        width: 1px;
-        height: 1px;
-    }
-}
-
-@media screen and (max-width: 1355px) {
-    #title-research {
-        top : 10px;
-    }
-}
-
-@media screen and (max-width: 781px) {
-    #title-research {
-        top : -47px;
-    }
-    #image-me {
-        top : 1500px;
-    }
+    font-weight: 700;
 }

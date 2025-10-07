@@ -2,6 +2,7 @@ import React from 'react';
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import './styles.css';
+import './Cours/styles-cours.css';
 
 import App from './App';
 

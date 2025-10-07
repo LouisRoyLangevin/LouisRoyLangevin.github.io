@@ -9,8 +9,6 @@ html, body, #root {
     --border-color : #D8D8D8;
     --box-color : #F4F4F4;
     --box-color-darker : #EBEBEB;
-    --left-section-width : 23vw;
-    --side-bar-width : 65px;
     font-family: 'Inter', sans-serif;
     font-weight: lighter;
     position : absolute;
@@ -23,7 +21,7 @@ html, body, #root {
     background-color: white;
     border: solid 1px #DDDDDD;
     border-radius: 20px;
-    box-shadow: 1.5px 3px 3px #BBBBBB;
+    box-shadow: 0px 3px 10px #AAAAAA;
     cursor: move;
     user-select: none;
     z-index: 1000000;
@@ -87,11 +85,6 @@ html, body, #root {
     border-radius: 10px;
 }
 
-#left-section {
-    width : var(--left-section-width);
-    height : calc(100vh - var(--header-height));
-}
-
 #side-bar-box {
     width : 75%;
     margin : auto;
@@ -140,175 +133,5 @@ html, body, #root {
     top : 28%;
     padding : 0;
     cursor: pointer;
-}
-
-#left-section-content {
-    width: calc(var(--left-section-width) - var(--side-bar-width) - 1px);
-    height: 100%;
-    margin-left: var(--side-bar-width);
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    position : absolute;
-    border-right : solid var(--border-color) 1px;
-}
-
-#left-section-box {
-    width : 95%;
-    display : grid;
-    margin-top : 15px;
-    margin-left : 2px;
-}
-
-#left-section-box-top {
-    height : 50px;
-    background-color: var(--box-color);
-    border-radius: 15px;
-    padding : none;
-    border : none;
-    
-    font: inherit;
-    font-size : 10pt;
-    color: inherit;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  
-    padding: 0 10px;  
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    z-index: 1;
-}
-
-.left-section-box-options {
-    overflow: hidden;
-    width : 100%;
-    background-color: var(--box-color);
-    border-radius: 15px;
-    padding : none;
-    border : none;
-    margin-top : 20px;
-    padding-top : 30px;
-    
-    font: inherit;
-    font-size : 10pt;
-    color: inherit;
-    cursor: pointer;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;  
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-}
-
-.left-section-box-button {
-    cursor: pointer;
-    width : 100%;
-    height : 50px;
-    border : none;
-    font : inherit;
-    border-radius : 15px;
-}
-.left-section-box-button.selected {
-    background-color: #dddddd;
-}
-.left-section-box-button.selected:hover {
-    background-color: #dddddd;
-}
-.left-section-box-button:hover {
-    background-color: #E8E8F4;
-}
-
-#list-videos {
-    width: calc(var(--left-section-width) - var(--side-bar-width) - 1px);
-    height : calc(100vh - var(--header-height));
-    margin-left: var(--side-bar-width);
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    z-index: 0;
-    position : absolute;
-    border-right : solid var(--border-color) 1px;
-    overflow-y: auto;
-    scrollbar-gutter: unset;
-}
-#list-videos::-webkit-scrollbar {
-    width: 3px;
-}
-#list-videos::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 2px;
-}
-#list-videos::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.chapter-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width : 23vw;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.chapter-name {
-    margin-right : 5px;
-    font-family : Inria Sans;
-    font-weight : 700;
-    font-size : 15px;;
-}
-
-.video-buffer {
-    width : 100%;
-    height : 15px;
-    flex-shrink: 0;
-}
-
-.video-button {
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    text-align: left;
-    font-size: 8pt;
-    font-family: 'Inria Sans', sans-serif;
-    font-weight: 300;
-    cursor: pointer;
-    min-height: 38px;
-
-    display: flex;
-    align-items: center;
-    padding-left: 5%;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-.video-button:hover {
-    background-color: #F6F6F6;
-}
-
-.video-button svg {
-    flex-shrink: 0;
-}
-
-.video-separator {
-    width : 100%;
-    height : 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.video-separator-bar {
-    background-color: black;
-    width : 2px;
-    height : 80%;
-    margin-left : calc(5% + 11px);
-    border-radius: 2px;
 }
 

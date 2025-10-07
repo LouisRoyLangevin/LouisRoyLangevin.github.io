@@ -1,21 +1,15 @@
 import logo from './images/logo.png';
 import React, { Component } from 'react';
-import { useState, useEffect } from 'react';
-import { LuArrowLeftFromLine, LuArrowRightFromLine } from "react-icons/lu";
-import { TfiShiftLeft, TfiShiftRight } from "react-icons/tfi";
-import { TbBookmarkAi } from "react-icons/tb";
-import { CiBookmark } from "react-icons/ci";
-import { PiChartPieSliceDuotone } from "react-icons/pi";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCircle } from "react-icons/fa";
-import { GiCircle } from "react-icons/gi";
 import { LuHouse } from "react-icons/lu";
 import { LuBookText } from "react-icons/lu";
 import { LuCalendarDays } from "react-icons/lu";
 import { LuClipboardList } from "react-icons/lu";
 import { LuCircleUser } from "react-icons/lu";
+import { useState, useEffect, useRef } from 'react';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+
+import Cours from "./Cours/Cours.js";
 
 const courses = {}
 
@@ -33,197 +27,6 @@ function Header() {
 
 function Acceuil() {
     return <p>bonjour</p>
-}
-
-function SideBar({leftSectionContentOpen,setLeftSectionContentOpen, setLeftContentClosedOnce}) {
-    let arrow = (
-        (leftSectionContentOpen) ?
-        <TfiShiftRight size={23} color="#363853"/>
-        :
-        <TfiShiftLeft size={23} color="#363853" />
-    )
-
-    return <>
-        <div id="side-bar">
-            <div id="side-bar-box">
-                <button id="side-bar-opener" onClick={() => {setLeftSectionContentOpen(!leftSectionContentOpen); setLeftContentClosedOnce(true)}}>
-                    {arrow}
-                </button>
-                <div id="side-bar-box-separator"></div>
-                <button id="side-bar-bookmark">
-                    <CiBookmark size={32} style={{margin : "auto"}}/>
-                </button>
-            </div>
-        </div>
-    </>
-}
-
-function LeftSectionBoxButton({name, key, selectedCourse, setSelectedCourse}) {
-    return <>
-        <button className={`left-section-box-button ${(name === selectedCourse) ? "selected" : ""}`} onClick={() => setSelectedCourse(name)} key={key}>
-            {name}
-        </button>
-    </>
-}
-
-function LeftSectionBox({name, options, selectedCourse, setSelectedCourse}) {
-    const [boxOpen, setBoxOpen] = useState(false);
-    let flecheSessionActuelle = (
-        (boxOpen) ?
-        <BsChevronDown style={{color: "#B8B8B8"}}/>
-        :
-        <BsChevronUp style={{color: "#B8B8B8"}}/>
-    )
-    return <>
-        <div id="left-section-box">
-            <button id="left-section-box-top" onClick={() => setBoxOpen(!boxOpen)}>
-                <div style={{display : "flex", alignItems : "center"}}>
-                <PiChartPieSliceDuotone size={23} />
-                <p style={{marginLeft : "9px"}}>{name}</p>
-                </div>
-                {flecheSessionActuelle}
-            </button>
-            <AnimatePresence>
-                {boxOpen && (
-                <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0,
-                        transition : {
-                            opacity : {duration : 0.2},
-                            height : {duration : 0.3}
-                        }
-                    }}
-                    transition={{ 
-                        height : {duration: 0.3},
-                        opacity : {delay: 0.1, duration : 0.3}
-                    }}
-                    className = "left-section-box-options"
-                >
-                    {options.map((name,key) => {
-                        
-                        return <LeftSectionBoxButton name={name} key={key} selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse}></LeftSectionBoxButton>
-                    })}
-                    
-                </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    </>
-}
-
-function LeftSectionContent({leftSectionContentOpen, leftContentClosedOnce, selectedCourse, setSelectedCourse}) {
-    return <>
-        <AnimatePresence>
-            {leftSectionContentOpen && (
-                <motion.div
-                    key="left-section"
-                    id="left-section-content"
-                    initial={leftContentClosedOnce ? { x : -23*window.innerWidth/100, opacity : 1} : false}
-                    animate={{ x : 0, opacity : 1}}
-                    transition={{ duration: 0.5}}
-                    exit={{x : -23*window.innerWidth/100, opacity : 1}}
-                >
-                    <LeftSectionBox name={"Session actuelle"} options={["Calcul Différentiel", "Physique Mécanique", "Chimie Générale"]} selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse}></LeftSectionBox>
-                    <LeftSectionBox name={"Tous les cours"} options={["Calcul Différentiel", "Physique Mécanique", "Chimie Générale","Calcul Intégral","Chimie des Solutions", "Électricité et Magnétisme", "Évolution et Diversité du Vivant"]} selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse}></LeftSectionBox>
-                </motion.div>
-            )}
-        </AnimatePresence>
-    </>
-}
-
-function VideoButton({name, selectedVideo, setSelectedVideo, furthestVideo, index}) {
-    console.log(name);
-    console.log(furthestVideo);
-    let opacity = (furthestVideo - index - 1 > 0) ? "20%" : "100%";
-    if (selectedVideo == name) {
-        return <>
-            <button className="video-button" style={{backgroundColor : "#EEEEEE"}} onClick={() => {setSelectedVideo(name)}}>
-                { (furthestVideo - index - 1 >= 0) &&
-                <FaCircle size={25} style={{marginRight : "8px"}} color={"#9B6EF7"} opacity={opacity}></FaCircle>}
-                { (furthestVideo - index - 1 < 0) &&
-                <GiCircle size={25} style={{marginRight : "8px"}} color={"#9B6EF7"} opacity="100%"></GiCircle>}
-                {name}
-            </button>
-        </>
-    }
-    return <>
-        <button className="video-button" onClick={() => {setSelectedVideo(name)}}>
-            { (furthestVideo - index - 1 >= 0) &&
-            <FaCircle size={25} style={{marginRight : "8px"}} color={"#9B6EF7"} opacity={opacity}></FaCircle>}
-            { (furthestVideo - index - 1 < 0) &&
-            <GiCircle size={25} style={{marginRight : "8px"}} color={"#9B6EF7"} opacity="100%"></GiCircle>}
-            {name}
-        </button>
-    </>
-}
-
-function VideoChapter({nameChapter, videosArray, selectedVideo, setSelectedVideo, furthestVideo}) {
-    const [videoChapterOpen, setVideoChapterOpen] = useState(false);
-    return <>
-        <div className="video-chapter">
-            <button className="chapter-title" onClick={() => setVideoChapterOpen(!videoChapterOpen)}>
-                <p className="chapter-name">{nameChapter}</p>
-                {videoChapterOpen ?
-                <FaChevronUp></FaChevronUp> :
-                <FaChevronDown></FaChevronDown> 
-            }
-            </button>
-            <AnimatePresence>
-                {videoChapterOpen && (
-                <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0,
-                        transition : {
-                            opacity : {duration : 0.4},
-                            height : {duration : 0.5}
-                        }
-                    }}
-                    transition={{ 
-                        height : {duration: 0.5},
-                        opacity : {delay: 0.1, duration : 0.5}
-                    }}
-                    >
-                    {videosArray.map((name,key) => {
-                        return <React.Fragment key={key}>
-                            {key > 0 && (<div className="video-separator">
-                                <div className="video-separator-bar"></div>
-                            </div>)}
-                            <VideoButton index={key} name={name} selectedVideo = {selectedVideo} furthestVideo={furthestVideo} setSelectedVideo={setSelectedVideo}></VideoButton>
-                        </React.Fragment>
-                    })}
-                </motion.div>
-                )}
-            </AnimatePresence>
-            
-        </div>
-    </>
-}
-
-function ListVideos({contentArray, selectedVideo, setSelectedVideo, furthestVideo}) {
-    let cumSizes = Array(contentArray.length+1).fill(0);
-    for (let i = 1; i <= contentArray.length; i++) cumSizes[i] += cumSizes[i-1] + contentArray[i-1].length - 1;
-    for (let i = 0; i <= contentArray.length; i++) console.log(cumSizes[i] + " ");
-    return <>
-        <div id="list-videos">
-            {contentArray.map((list,key) => {
-                return <React.Fragment key={key}>
-                    <VideoChapter nameChapter={list[0]} videosArray={list.slice(1,list.length)} selectedVideo = {selectedVideo} furthestVideo={furthestVideo-cumSizes[key]} setSelectedVideo={setSelectedVideo}></VideoChapter>
-                </React.Fragment>
-            })}
-        </div>
-    </>
-}
-
-function LeftSection({selectedVideo, setSelectedVideo, furthestVideo, selectedCourse, setSelectedCourse}) {
-    const [leftSectionContentOpen, setLeftSectionContentOpen] = useState(true);
-    const [leftContentClosedOnce, setLeftContentClosedOnce] = useState(false);
-    return <>
-        <SideBar leftSectionContentOpen={leftSectionContentOpen} setLeftSectionContentOpen={setLeftSectionContentOpen} setLeftContentClosedOnce={setLeftContentClosedOnce}></SideBar>
-        <ListVideos contentArray={[["Chapitre 1 : zizi", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Intro calcul diff", "Ma blonde a 14 ans", "J'ai chié par terre", "Je suis extrêmement raciste et mysogine, je souhaite la mort de tous sauf les hommes"],["Chapitre 2: Caca", "ouais", "bonjour", "alskdjf;laksdfj;lkj"]]} selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} furthestVideo={furthestVideo}></ListVideos>
-        <LeftSectionContent leftSectionContentOpen={leftSectionContentOpen} leftContentClosedOnce={leftContentClosedOnce} selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse}></LeftSectionContent>
-    </>
 }
 
 function MenuBarInterior({selectedMenuBar, setSelectedMenuBar}) {
@@ -268,7 +71,6 @@ function MenuBar({selectedMenuBar, setSelectedMenuBar}) {
             setMenuBarOpen(!menuBarOpen);
             setLastClick(currentClick);
             setLastMousePos(currentMousePos);
-            console.log("menuBarOpen = " + menuBarOpen)
             return;
         }
         setDragging(true);
@@ -340,25 +142,7 @@ function MenuBar({selectedMenuBar, setSelectedMenuBar}) {
     </AnimatePresence>)
 }
 
-function MiddleSection({video}) {
 
-}
-
-function Cours() {
-    const [selectedVideo, setSelectedVideo] = useState(null);
-    const [selectedCourse, setSelectedCourse] = useState(null);
-    return <>
-        <div id="left-section">
-            <LeftSection selectedVideo = {selectedVideo} setSelectedVideo={setSelectedVideo} selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse} furthestVideo = {24}></LeftSection>
-        </div>
-        <div id="middle-section">
-
-        </div>
-        <div id="right-section">
-
-        </div>
-    </>
-}
   
 
 export default function CegepAI() {

@@ -176,6 +176,16 @@ a.gradient-text:hover {
     margin-top: 10px;
 }
 
+#my-google-scholar {
+    font-size: 14pt;
+    font-weight: 300;
+    color: blue;
+    vertical-align: middle;
+}
+#my-google-scholar:hover {
+    color: rgb(120,120,255);
+}
+
 .content-section-research {
     width: 100%;
 }

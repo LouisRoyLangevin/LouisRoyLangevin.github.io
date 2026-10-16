@@ -98,6 +98,11 @@ header {
     font-size: 20pt;
 }
 
+#last-update {
+    color: white;
+    margin-top: 70px;
+}
+
 a.gradient-text:hover {
     color: rgb(240,190,190);
 }
